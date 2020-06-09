@@ -28,10 +28,10 @@ function useScrollPosition() {
   const [percent, setPercent] = useState(0);
 
   function handleScroll(event) {
-    console.log(document.documentElement.scrollTop);
-    const howFar =
-      document.documentElement.scrollTop /
-      document.documentElement.scrollTopMax;
+    const scrollTop =
+      document.scrollingElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const howFar = document.documentElement.scrollTop / scrollTop;
     setPercent(howFar);
   }
 
